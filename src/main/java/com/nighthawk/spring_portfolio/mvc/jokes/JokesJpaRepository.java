@@ -9,5 +9,5 @@ public interface JokesJpaRepository extends JpaRepository<Jokes, Long> {
     // JPA has many built in methods, these few have been prototyped for this application
     void save(String Joke);
     List<Jokes> findAllByOrderByJokeAsc();
-    List<Jokes> findByJokeIgnoreCase(String name);
+    List<Jokes> findByJokeIgnoreCase(String joke);
 }

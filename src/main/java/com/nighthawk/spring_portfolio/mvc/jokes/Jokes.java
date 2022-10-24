@@ -17,4 +17,7 @@ public class Jokes {
 
     @Column(unique=true)
     private String joke;
+
+    private int haha;
+    private int boohoo;
 }
