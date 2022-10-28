@@ -39,7 +39,7 @@ public class JokesApiController {
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Jokes joke = optional.get();  // value from findByID
-            joke.setHaha(joke.getHaha()+1); // increment value
+            joke.setUsername(joke.getUsername()); // increment value
             repository.save(joke);  // save entity
             return new ResponseEntity<>(joke, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
@@ -54,7 +54,7 @@ public class JokesApiController {
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Jokes joke = optional.get();
-            joke.setBoohoo(joke.getBoohoo()+1);
+            joke.setPassword(joke.getPassword());
             repository.save(joke);
             return new ResponseEntity<>(joke, HttpStatus.OK);
         }
