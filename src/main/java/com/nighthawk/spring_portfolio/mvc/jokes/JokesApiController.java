@@ -42,12 +42,13 @@ public class JokesApiController {
         if (optional.isPresent()) {  // Good ID
             Jokes input = new Jokes(null, "hi","user","user");
             repository.save(input);
+            return new ResponseEntity<>(input, HttpStatus.OK);
         
 
          /* Jokes joke = optional.get();  // value from findByID
             joke.setUsername(joke.getUsername()); // increment value
             repository.save(joke);  // save entity
-            return new ResponseEntity<>(joke, HttpStatus.OK);  */ // OK HTTP response: status code, headers, and body
+              */ // OK HTTP response: status code, headers, and body
         }
         // Bad ID
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
