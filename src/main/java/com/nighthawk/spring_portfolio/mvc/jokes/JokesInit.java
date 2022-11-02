@@ -19,9 +19,6 @@ public class JokesInit {
             // Fail safe data validations
 
             // starting jokes
-
-            
-            
             final String[] jokesArray = {
                 "If you give someone a program... you will frustrate them for a day; if you teach them how to program... you will frustrate them for a lifetime.",
                 "Q: Why did I divide sin by tan? A: Just cos.",
@@ -47,11 +44,10 @@ public class JokesInit {
             for (String joke : jokesArray) {
                 List<Jokes> test = repository.findByJokeIgnoreCase(joke);  // JPA lookup
                 if (test.size() == 0)
-                    repository.save(new Jokes(null, joke, " ",  " ")); //JPA save
+                    repository.save(new Jokes(null, joke, 0, 0)); //JPA save
             }
-
             
         };
     }
 }
- 
+

@@ -36,19 +36,12 @@ public class JokesApiController {
         * If a value is present, isPresent() will return true
         * get() will return the value.
         */
-        
-
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Jokes input = new Jokes(null, "hi","user","user");
-            repository.save(input);
-            return new ResponseEntity<>(input, HttpStatus.OK);
-        
-
-         /* Jokes joke = optional.get();  // value from findByID
-            joke.setUsername(joke.getUsername()); // increment value
+            Jokes joke = optional.get();  // value from findByID
+            joke.setHaha(joke.getHaha()+1); // increment value
             repository.save(joke);  // save entity
-              */ // OK HTTP response: status code, headers, and body
+            return new ResponseEntity<>(joke, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
         // Bad ID
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
@@ -61,7 +54,7 @@ public class JokesApiController {
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Jokes joke = optional.get();
-            joke.setPassword(joke.getPassword());
+            joke.setBoohoo(joke.getBoohoo()+1);
             repository.save(joke);
             return new ResponseEntity<>(joke, HttpStatus.OK);
         }
