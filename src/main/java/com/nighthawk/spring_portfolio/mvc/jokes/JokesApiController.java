@@ -40,9 +40,9 @@ public class JokesApiController {
 
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-
-            repository.save(new Jokes(null, "hi","user","user"));
-           // return new ResponseEntity<>(input, HttpStatus.OK);
+            Jokes input = new Jokes(null, "hi","user","user");
+            repository.save(input);
+            return new ResponseEntity<>(input, HttpStatus.OK);
         
 
          /* Jokes joke = optional.get();  // value from findByID
