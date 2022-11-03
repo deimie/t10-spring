@@ -38,10 +38,9 @@ public class JokesApiController {
         */
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Jokes joke = optional.get();  // value from findByID
-            joke.setHaha(joke.getHaha()+1); // increment value
-            repository.save(joke);  // save entity
-            return new ResponseEntity<>(joke, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
+            Jokes input = new Jokes(null, "joke", 0, 0);
+            repository.save(input);
+            return new ResponseEntity<>(input, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
         // Bad ID
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
