@@ -18,6 +18,6 @@ public class Jokes {
     @Column(unique=true)
     private String joke;
 
-    private String haha;
-    private String boohoo;
+    private String username;
+    private String password;
 }
