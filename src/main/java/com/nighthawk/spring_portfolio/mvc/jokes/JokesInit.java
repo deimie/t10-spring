@@ -42,6 +42,11 @@ public class JokesInit {
 
             // make sure Joke database is populated with starting joke
                      //JPA save
+                     for (String joke : jokesArray) {
+                        List<Jokes> test = repository.findByJokeIgnoreCase(joke);  // JPA lookup
+                        if (test.size() == 0)
+                            repository.save(new Jokes(null, joke, null, 0)); //JPA save
+                    }
             
             
         };
