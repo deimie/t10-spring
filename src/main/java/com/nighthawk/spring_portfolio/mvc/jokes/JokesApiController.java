@@ -38,7 +38,7 @@ public class JokesApiController {
         */
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Jokes input = new Jokes(null, "joke", 0, 0);
+            Jokes input = new Jokes(null, "joke", id, 0);
             repository.save(input);
             return new ResponseEntity<>(input, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
