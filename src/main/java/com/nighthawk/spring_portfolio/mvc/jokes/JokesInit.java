@@ -40,12 +40,9 @@ public class JokesInit {
                 "An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?"
             };
 
-            // make sure Joke database is populated with starting jokes
-            for (String joke : jokesArray) {
-                List<Jokes> test = repository.findByJokeIgnoreCase(joke);  // JPA lookup
-                if (test.size() == 0)
-                    repository.save(new Jokes(null, joke, 0, 0)); //JPA save
-            }
+            // make sure Joke database is populated with starting joke
+                     //JPA save
+            
             
         };
     }
