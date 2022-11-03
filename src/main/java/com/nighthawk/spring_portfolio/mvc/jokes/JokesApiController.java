@@ -74,7 +74,7 @@ public class JokesApiController {
 
     /* Add a new entry
      */
-    @RequestMapping(method=RequestMethod.GET,value="/newJoke/{jokeStr}/{anthorStr}")
+    @RequestMapping(method=RequestMethod.PUT,value="/newJoke/{jokeStr}/{anthorStr}")
     public ResponseEntity<Jokes> getNewJoke(@PathVariable String jokeStr,@PathVariable String anthorStr) {
 
         // return ResponseEntity.ok( questionBankService.getSpecificquestions(subject,topic));
