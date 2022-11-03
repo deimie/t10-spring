@@ -42,10 +42,14 @@ public class JokesInit {
 
             // make sure Joke database is populated with starting joke
                      //JPA save
-                     Jokes input = new Jokes(null, "joke", "calissa", "password");
+                     Jokes input = new Jokes(null, "joke","calissa", "password");
                      repository.save(input);
-                     Jokes input1 = new Jokes(null, "joke", "kian", "1");
+                     Jokes input1 = new Jokes(null, "joke","kian", "1");
                      repository.save(input1);
+                     Jokes input2 = new Jokes(null, "joke","samuel", "12345");
+                     repository.save(input2);
+                     Jokes input3 = new Jokes(null, "joke","evan", "15");
+                     repository.save(input3);
             
             
         };
