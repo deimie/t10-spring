@@ -53,7 +53,7 @@ public class JokesApiController {
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Jokes joke = optional.get();
-            joke.setPassword(joke.getPassword()+1);
+            joke.setBoohoo(joke.getBoohoo()+1);
             repository.save(joke);
             return new ResponseEntity<>(joke, HttpStatus.OK);
         }
