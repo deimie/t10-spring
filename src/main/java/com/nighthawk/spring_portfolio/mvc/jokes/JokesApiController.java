@@ -78,7 +78,7 @@ public class JokesApiController {
     public ResponseEntity<Jokes> getNewJoke(@PathVariable String jokeStr,@PathVariable String anthorStr, @PathVariable String img) {
 
         // return ResponseEntity.ok( questionBankService.getSpecificquestions(subject,topic));
-        Jokes input = new Jokes(null, jokeStr, anthorStr,img,"id", "0");
+        Jokes input = new Jokes(null, jokeStr, anthorStr, img, "id", "0");
         repository.save(input);
         return new ResponseEntity<>(input, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
 
