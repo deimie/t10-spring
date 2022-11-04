@@ -42,13 +42,13 @@ public class JokesInit {
 
             // make sure Joke database is populated with starting joke
                      //JPA save
-                     Jokes input = new Jokes(null,"calissa", "password", "a", "b");
+                     Jokes input = new Jokes(null,"calissa", "password", "https://png.pngtree.com/png-vector/20191206/ourmid/pngtree-a-red-little-bird-vector-or-color-illustration-png-image_2030892.jpg","a", "b");
                      repository.save(input);
-                     Jokes input1 = new Jokes(null, "joke","kian",  "a", "b");
+                     Jokes input1 = new Jokes(null, "kian","12345", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQc-7ApYAARXV-Bs_TE1gdZ2RiRdkj0xCdXQ&usqp=CAU", "a", "b");
                      repository.save(input1);
-                     Jokes input2 = new Jokes(null, "joke","samuel",  "a", "b");
+                     Jokes input2 = new Jokes(null, "samuel","poo", "https://thumbs.dreamstime.com/b/vector-illustration-bird-bird-sitting-bird-vector-bird-icon-logo-115133018.jpg", "a", "b");
                      repository.save(input2);
-                     Jokes input3 = new Jokes(null, "joke","evan",  "a", "b");
+                     Jokes input3 = new Jokes(null, "evan","54321", "https://png.pngtree.com/png-vector/20191206/ourmid/pngtree-a-red-little-bird-vector-or-color-illustration-png-image_2030892.jpg", "a", "b");
                      repository.save(input3);
             
             

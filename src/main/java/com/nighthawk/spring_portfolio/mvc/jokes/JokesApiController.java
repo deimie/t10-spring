@@ -38,7 +38,7 @@ public class JokesApiController {
         */
         Optional<Jokes> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
-            Jokes input = new Jokes(null, "joke","d", "id", "0");
+            Jokes input = new Jokes(null, "joke","d", "imgg", "id", "0");
             repository.save(input);
             return new ResponseEntity<>(input, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
@@ -74,11 +74,11 @@ public class JokesApiController {
 
     /* Add a new entry
      */
-    @RequestMapping(method=RequestMethod.PUT,value="/newJoke/{jokeStr}/{anthorStr}")
-    public ResponseEntity<Jokes> getNewJoke(@PathVariable String jokeStr,@PathVariable String anthorStr) {
+    @RequestMapping(method=RequestMethod.PUT,value="/newJoke/{jokeStr}/{anthorStr}/{img}")
+    public ResponseEntity<Jokes> getNewJoke(@PathVariable String jokeStr,@PathVariable String anthorStr, @PathVariable String img) {
 
         // return ResponseEntity.ok( questionBankService.getSpecificquestions(subject,topic));
-        Jokes input = new Jokes(null, jokeStr, anthorStr,"id", "0");
+        Jokes input = new Jokes(null, jokeStr, anthorStr,img,"id", "0");
         repository.save(input);
         return new ResponseEntity<>(input, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
 

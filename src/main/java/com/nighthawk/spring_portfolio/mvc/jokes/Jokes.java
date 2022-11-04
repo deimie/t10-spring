@@ -19,6 +19,8 @@ public class Jokes {
     private String joke;
     private String password;
 
+    private String img;
     private String haha;
     private String boohoo;
+    
 }
